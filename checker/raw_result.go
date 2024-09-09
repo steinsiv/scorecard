@@ -27,6 +27,7 @@ import (
 //
 //nolint:govet
 type RawResults struct {
+	AppseqResults               AppseqData
 	BinaryArtifactResults       BinaryArtifactData
 	BranchProtectionResults     BranchProtectionsData
 	CIIBestPracticesResults     CIIBestPracticesData
@@ -42,12 +43,17 @@ type RawResults struct {
 	Metadata                    MetadataData
 	PackagingResults            PackagingData
 	PinningDependenciesResults  PinningDependenciesData
+	ReadmeResults               ReadmeData
 	SASTResults                 SASTData
 	SecurityPolicyResults       SecurityPolicyData
 	SignedReleasesResults       SignedReleasesData
 	TokenPermissionsResults     TokenPermissionsData
 	VulnerabilitiesResults      VulnerabilitiesData
 	WebhookResults              WebhooksData
+}
+
+type AppseqData struct {
+	FoundAppseq bool
 }
 
 type MetadataData struct {
@@ -292,6 +298,11 @@ const (
 type SASTWorkflow struct {
 	Type SASTWorkflowType
 	File File
+}
+
+type ReadmeData struct {
+	FoundReadme bool
+	ContainsURL bool
 }
 
 // SecurityPolicyData contains the raw results

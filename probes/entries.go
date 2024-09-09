@@ -17,6 +17,7 @@ package probes
 import (
 	"github.com/ossf/scorecard/v5/checker"
 	"github.com/ossf/scorecard/v5/finding"
+	"github.com/ossf/scorecard/v5/probes/appseqPresent"
 	"github.com/ossf/scorecard/v5/probes/archived"
 	"github.com/ossf/scorecard/v5/probes/blocksDeleteOnBranches"
 	"github.com/ossf/scorecard/v5/probes/blocksForcePushOnBranches"
@@ -75,8 +76,11 @@ type IndependentProbeImpl func(*checker.CheckRequest) ([]finding.Finding, string
 var (
 	// All represents all the probes.
 	All []ProbeImpl
-	// SecurityPolicy is all the probes for the
-	// SecurityPolicy check.
+
+	Appseq = []ProbeImpl{
+		appseqPresent.Run,
+	}
+
 	SecurityPolicy = []ProbeImpl{
 		securityPolicyPresent.Run,
 		securityPolicyContainsLinks.Run,
@@ -179,6 +183,7 @@ var (
 //nolint:gochecknoinits
 func init() {
 	All = concatMultipleProbes([][]ProbeImpl{
+		A,
 		BinaryArtifacts,
 		CIIBestPractices,
 		CITests,

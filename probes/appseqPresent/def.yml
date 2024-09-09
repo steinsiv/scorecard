@@ -1,0 +1,33 @@
+id: appseqPresent
+lifecycle: experimental
+short: Check if a APPSEC.md file is defined in the repository.
+motivation: >
+  An APPSEC.md file provides important information about the repository
+implementation: >
+  The implementation looks for the presence of an APPSEC.md fil
+outcome:
+  - If an APPSEC.md file is found, one finding with OutcomeTrue is returned.
+  - If no APPSEC.md file is found, one finding with OutcomeFalse is returned.
+remediation:
+  onOutcome: False
+  effort: Low
+  text:
+    - 'To add an APPSEC.md file:'
+    - Create an APPSEC.md file in the root of your repository with the necessary information
+  markdown:
+    - 'Here is a basic template for your APPSEC.md:'
+    - '# Project Title'
+    - 'A short description of your project, including its purpose and functionality.'
+    - '## Getting Started'
+    - 'Provide installation instructions, prerequisites, and setup steps.'
+    - '## Usage'
+    - 'Showcase examples of how to use your project.'
+    - '## Contributing'
+    - 'Provide guidelines on how to contribute to the project.'
+ecosystem:
+  languages:
+    - all
+  clients:
+    - github
+    - gitlab
+    - localdir

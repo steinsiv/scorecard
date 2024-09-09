@@ -7,6 +7,13 @@ remediation steps to improve the score, and an explanation of the risks
 associated with a low score. The checks are continually changing and we welcome
 community feedback. If you have ideas for additions or new detection techniques,
 please [contribute](../CONTRIBUTING.md)!
+## Appseq 
+
+Risk: `High` (appsec is important)
+ 
+**Remediation steps**
+- Create an APPSEC.md file
+
 ## Binary-Artifacts 
 
 Risk: `High` (non-reviewable code)

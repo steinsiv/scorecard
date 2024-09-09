@@ -352,6 +352,12 @@ func assignRawData(probeCheckName string, request *checker.CheckRequest, ret *Re
 			return sce.WithMessage(sce.ErrScorecardInternal, err.Error())
 		}
 		ret.RawResults.SASTResults = rawData
+	case checks.CheckAppseq:
+		rawData, err := raw.Appseq(request, "APPSEC.md")
+		if err != nil {
+			return sce.WithMessage(sce.ErrScorecardInternal, err.Error())
+		}
+		ret.RawResults.AppseqResults = rawData
 	case checks.CheckSBOM:
 		rawData, err := raw.SBOM(request)
 		if err != nil {

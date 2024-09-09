@@ -18,6 +18,7 @@ type CheckName = string
 
 // Redefining check names here to avoid circular imports.
 const (
+	Appseq               CheckName = "Appseq"
 	BinaryArtifacts      CheckName = "Binary-Artifacts"
 	BranchProtection     CheckName = "Branch-Protection"
 	CIIBestPractices     CheckName = "CII-Best-Practices"
@@ -41,6 +42,7 @@ const (
 )
 
 var AllValidChecks []string = []string{
+	Appseq,
 	BinaryArtifacts,
 	BranchProtection,
 	CIIBestPractices,

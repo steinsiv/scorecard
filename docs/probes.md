@@ -5,6 +5,20 @@ This page describes each Scorecard probe in detail, including description, motiv
 and outcomes. If you have ideas for additions or new detection techniques,
 please [contribute](../CONTRIBUTING.md)!
 
+## appseqPresent
+
+**Lifecycle**: experimental
+
+**Description**: Check if a APPSEC.md file is defined in the repository.
+
+**Motivation**: A APPSEC.md file provides important information
+
+**Implementation**: The implementation looks for the presence of a APPSEC.md file
+
+**Outcomes**: If a APPSEC.md file is found, one finding with OutcomeTrue is returned.
+If no APPSEC.md file is found, one finding with OutcomeFalse is returned.
+
+
 ## archived
 
 **Lifecycle**: stable
